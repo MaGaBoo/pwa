@@ -1,0 +1,48 @@
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+.main_container {
+    max-width: 60rem;
+    margin: 0 auto; 
+}
+
+.form {
+    border: 1px solid #000;
+    margin-bottom: 2rem;
+}
+
+.form_input {
+    display: flex;
+    margin-bottom: 2rem;
+    padding-top: 2rem
+}
+
+.form label {
+    flex-basis: 10rem;
+
+}
+
+.form textarea {
+    flex: 1;
+    border: 1px solid #e1e1e1;
+
+  }
+
+  .btn {
+    background-color: #02C3BD;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color 0.3s ease-out;
+    text-align: center;
+    border: none;
+  }
+  
+  .btn:hover {
+    background-color: #009F93;
+    cursor: pointer;
+  }
