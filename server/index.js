@@ -37,8 +37,8 @@ webpush.setVapidDetails(
 // Routes
 app.get("/", async (req, res, next) => {
   const payload = JSON.stringify({
-    title: "Title",
-    message: "Message body",
+    title: "Server notification",
+    message: "This notification comes from server",
   });
   try {
     await webpush.sendNotification(pushSubscription, payload);
@@ -49,8 +49,13 @@ app.get("/", async (req, res, next) => {
 });
 
 app.post("/subscription", (req, res, next) => {
-  console.log(req.body);
-  res.sendStatus(200).json();
+const { title, message } = req.body;
+const payload = JSON.stringify ({
+  title,
+  message
 });
-
+webpush.sendNotification(pushSubscription, payload);
+res.send('Everything ok, custom notification sent')
+});
+ 
 app.listen(8000, () => console.log("Server listening on port 8000"));

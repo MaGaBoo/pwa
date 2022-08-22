@@ -91,8 +91,8 @@ self.addEventListener("push", (event) => {
 
 self.addEventListener("submit", (event) => {
   const { title, message } = event.data.json();
-  if (event.data) {
+
     self.registration.showNotification(title, { body: message });
     console.log("Data received from form", event.data.json());
-  }
+  
 });
